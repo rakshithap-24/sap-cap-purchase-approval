@@ -1,0 +1,46 @@
+POST http://localhost:4004/odata/v4/catalog/PurchaseRequests
+Content-Type: application/json
+
+{
+  "requesterEmail": "employee@example.com",
+  "costCenter": "TX-100",
+  "category": "IT",
+  "amount": 2500,
+  "currency": "USD",
+  "supplier": "Dell",
+  "justification": "New laptop",
+  "status": "DRAFT"
+}
+
+### Submit Purchase Request
+POST http://localhost:4004/odata/v4/catalog/submitPurchaseRequest
+Content-Type: application/json
+
+{
+  "ID": "c18d3d01-71e7-4a96-aaf1-2c8f34e828e9"
+}
+
+### Get Approval Tasks
+GET http://localhost:4004/odata/v4/catalog/ApprovalTasks
+
+### Approve Task
+POST http://localhost:4004/odata/v4/catalog/approveTask
+Content-Type: application/json
+
+{
+  "taskId": "428d1fd8-fab8-4451-ab94-a8b910536e3e",
+  "comment": "Approved"
+}
+
+### Reject Task
+POST http://localhost:4004/odata/v4/catalog/rejectTask
+Content-Type: application/json
+
+{
+  "taskId": "428d1fd8-fab8-4451-ab94-a8b910536e3e",
+  "comment": "Rejected due to budget"
+}
+
+### Verify Purchase Requests
+GET http://localhost:4004/odata/v4/catalog/PurchaseRequests
+

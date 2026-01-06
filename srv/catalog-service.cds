@@ -2,7 +2,7 @@ using spas.db as db from '../db/schema';
 
 
 service CatalogService{
-    @readonly
+    
     entity PurchaseRequests as projection on db.PurchaseRequests
     excluding {approvals};
 
